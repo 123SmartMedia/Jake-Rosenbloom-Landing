@@ -1,0 +1,362 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jake Rosenbloom, Loan Officer | United Mortgage Corp.</title>
+<link rel="icon" href="/favicon.ico" />
+<meta name="description" content="A few quick questions to map out your homebuying options. No credit check to get started. Jake Rosenbloom, Team Bloom at United Mortgage Corp. NMLS #1284586. Equal Housing Lender." />
+
+<!-- Phase 4: Google Ads — uncomment scripts/gtag.js with your conversion ID -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+<!-- Top utility bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span>NMLS <a class="nmls-link" href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener noreferrer">#1284586</a> · Licensed in 26 states</span>
+    <span class="ehl"><span class="ehl-mark"></span> Equal Housing Lender</span>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site">
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="tbico" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E2A47"/><stop offset="1" stop-color="#13808E"/></linearGradient></defs><rect width="48" height="48" rx="13" fill="url(#tbico)"/><g fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 24 L24 12.5 L37 24"/><path d="M33 18.5 L33 14 L35.6 14"/><path d="M14.5 24 L14.5 36"/><path d="M33.5 24 L33.5 36"/></g><g stroke="#E0A93B" stroke-width="2" fill="none" stroke-linecap="round"><circle cx="20.5" cy="29.5" r="3"/><line x1="23.3" y1="29.5" x2="31" y2="29.5"/><line x1="28.5" y1="29.5" x2="28.5" y2="32"/><line x1="31" y1="29.5" x2="31" y2="32.4"/></g></svg></div>
+      <div>
+        <div class="name">Jake Rosenbloom</div>
+        <div class="sub">Loan Officer · United Mortgage Corp.</div>
+      </div>
+    </div>
+    <div class="hcall"><img src="/United-Mortgage-Color-Logo-200x200.png" alt="United Mortgage" class="um-logo-header" height="36" />
+      <div>Questions?
+        <span>Talk to Jake</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero + form -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">First-time & repeat buyers</span>
+      <h1>Know where you stand <em>before</em> you fall for a house.</h1>
+      <p class="lede">Answer a few quick questions and Jake will personally map out your options and next steps — clearly, with no pressure.</p>
+      <ul class="ticks">
+        <li><span class="tick">✓</span> No credit check to get started</li>
+        <li><span class="tick">✓</span> Takes about 60 seconds</li>
+        <li><span class="tick">✓</span> Jake follows up personally — not a call center</li>
+        <li><span class="tick">✓</span> Conventional, FHA, VA, USDA, Jumbo &amp; down payment assistance</li>
+      </ul>
+      <div class="trustrow">
+        <div class="item"><span class="num">26</span>states licensed</div>
+        <div class="item"><span class="num">6</span>loan types under one roof</div>
+        <div class="item"><span class="num">NMLS</span>#1284586</div>
+      </div>
+    </div>
+
+    <!-- LEAD FUNNEL FORM -->
+    <div class="order-form">
+      <div class="card" id="card">
+        <div class="card-head">
+          <h2>Start your homebuying game plan</h2>
+          <p>A few questions, then Jake follows up personally.</p>
+          <div class="progress"><div class="bar" id="bar"></div></div>
+        </div>
+
+        <form id="leadForm" novalidate>
+          <div class="stepwrap">
+
+            <!-- Step 1 -->
+            <div class="step active" data-step="1">
+              <p class="stepcount">Step 1 of 5</p>
+              <p class="qtitle">What brings you in today?</p>
+              <div class="opts" data-field="goal">
+                <div class="opt" data-value="Buying my first home"><span class="ic">🏠</span> Buying my first home</div>
+                <div class="opt" data-value="Buying again / moving"><span class="ic">📦</span> Buying again or moving</div>
+                <div class="opt" data-value="Refinancing"><span class="ic">🔄</span> Refinancing my current home</div>
+                <div class="opt" data-value="Just exploring"><span class="ic">🔍</span> Just exploring my options</div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step" data-step="2">
+              <p class="stepcount">Step 2 of 5</p>
+              <p class="qtitle">Where are you looking to buy?</p>
+              <div class="field" data-validate="state">
+                <label for="state">State</label>
+                <select id="state" name="state">
+                  <option value="">Select a state…</option>
+                </select>
+                <div class="err">Please choose a state.</div>
+              </div>
+              <div id="stateNotice" class="state-notice" hidden></div>
+              <p style="font-size:12px;color:var(--gray);margin:2px 0 0">Program availability and terms vary by state and eligibility.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step" data-step="3">
+              <p class="stepcount">Step 3 of 5</p>
+              <p class="qtitle">When are you hoping to buy?</p>
+              <div class="opts" data-field="timeline">
+                <div class="opt" data-value="Ready now"><span class="ic">⚡</span> I'm ready now</div>
+                <div class="opt" data-value="1–3 months"><span class="ic">📅</span> In the next 1–3 months</div>
+                <div class="opt" data-value="3–6 months"><span class="ic">🗓️</span> 3–6 months out</div>
+                <div class="opt" data-value="Just researching"><span class="ic">💭</span> Just researching for now</div>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step" data-step="4">
+              <p class="stepcount">Step 4 of 5</p>
+              <p class="qtitle">Roughly what price range?</p>
+              <div class="field" data-validate="price">
+                <label for="price">Estimated home price</label>
+                <select id="price" name="price">
+                  <option value="">Select a range…</option>
+                  <option>Under $250k</option>
+                  <option>$250k – $400k</option>
+                  <option>$400k – $600k</option>
+                  <option>$600k – $850k</option>
+                  <option>$850k – $1.2M</option>
+                  <option>Over $1.2M</option>
+                  <option>Not sure yet</option>
+                </select>
+                <div class="err">Please pick a range (or "Not sure yet").</div>
+              </div>
+              <div class="field">
+                <label for="agent">Are you already working with a real estate agent?</label>
+                <select id="agent" name="agent">
+                  <option value="">Optional</option>
+                  <option>Yes, I have an agent</option>
+                  <option>No, not yet</option>
+                  <option>I am a real estate agent</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step" data-step="5">
+              <p class="stepcount">Step 5 of 5</p>
+              <p class="qtitle">Where should we send your options?</p>
+              <div class="field-row">
+                <div class="field" data-validate="firstName">
+                  <label for="firstName">First name</label>
+                  <input type="text" id="firstName" name="firstName" autocomplete="given-name" placeholder="Jordan" />
+                  <div class="err">Enter your first name.</div>
+                </div>
+                <div class="field" data-validate="lastName">
+                  <label for="lastName">Last name</label>
+                  <input type="text" id="lastName" name="lastName" autocomplete="family-name" placeholder="Smith" />
+                  <div class="err">Enter your last name.</div>
+                </div>
+              </div>
+              <div class="field" data-validate="email">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="you@email.com" />
+                <div class="err">Please enter a valid email.</div>
+              </div>
+              <div class="field" data-validate="phone">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(555) 555-1234" />
+                <div class="err">Please enter a valid phone number.</div>
+              </div>
+              <label class="consent">
+                <input type="checkbox" id="consent" />
+                <span>By submitting, I agree that Team Bloom at United Mortgage Corp. may contact me by phone, text, or email about my inquiry, including by automated means. Consent is not a condition of any purchase. Message/data rates may apply. This is not a commitment to lend or an approval; all loans are subject to underwriting.</span>
+              </label>
+              <div class="field" data-validate="consent" style="margin-top:0">
+                <div class="err">Please check the box so we can reach you.</div>
+              </div>
+            </div>
+
+            <div class="nav">
+              <button type="button" class="btn btn-ghost" id="back" style="display:none">Back</button>
+              <button type="button" class="btn btn-primary" id="next">Continue</button>
+            </div>
+            <p class="reassure">🔒 Your information is kept private and never sold.</p>
+          </div>
+        </form>
+
+        <!-- Success state -->
+        <div class="success" id="success">
+          <div class="check">✓</div>
+          <h2>You're all set.</h2>
+          <p>Thanks — your request is in. Jake will reach out shortly to walk through your options and answer your questions.</p>
+          <p style="margin-top:14px;font-weight:600;color:var(--navy)">No obligation. No pressure.</p>
+        </div>
+      </div>
+
+      <!-- LOAN OFFICER INTRO — swap the headshot by dropping a file named
+           jake-headshot.jpg in this folder, or update the src below. -->
+      <div class="intro">
+        <div class="avatar">
+          <img src="/jake-headshot.jpg" alt="Jake Rosenbloom, loan officer" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+          <div class="ini" style="display:none">JR</div>
+        </div>
+        <div class="who">
+          <span class="role">Your loan officer</span>
+          <strong>Jake Rosenbloom</strong>
+          <span>"Hi! I'll personally make sure you get clear answers — no pressure, no runaround."</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews strip -->
+<section class="block" style="background:#fff;border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <p class="sec-eyebrow">What buyers say</p>
+    <h2 class="sec-title">Trusted by buyers across the region</h2>
+
+    <div class="rev-head">
+      <div class="rating-pill">
+        <span class="dot g">G</span>
+        <div>
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <div class="rp-meta"><strong>5.0</strong> · 6 Google reviews</div>
+        </div>
+      </div>
+      <div class="rating-pill">
+        <span class="dot z">Z</span>
+        <div>
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <div class="rp-meta"><strong>4.94</strong> · 18 Zillow reviews</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rev-grid">
+      <div class="rev">
+        <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"Being a first-time homeowner was a very challenging process to navigate, however, Jake made this journey seem much more manageable for my husband and I. He is extremely knowledgeable in his trade, responsive, attentive, and compassionate. We were so lucky to have him by our side! I have and will continue to recommend him to everyone!"</p>
+        <div class="by"><span class="av">JS</span><span class="nm">Joanna S.<small>Google review</small></span></div>
+      </div>
+      <div class="rev">
+        <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"Jake helped us get our house as first-time home buyers and made the process easy. Very honest, and will answer your questions any time of the day. Highly recommend!"</p>
+        <div class="by"><span class="av">CS</span><span class="nm">Cody S.<small>Google review</small></span></div>
+      </div>
+      <div class="rev">
+        <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"Working with Jake as my mortgage officer was an outstanding experience from start to finish. He was incredibly helpful throughout the entire process, always taking the time to explain each step clearly and making sure I felt confident in every decision."</p>
+        <div class="by"><span class="av">GJ</span><span class="nm">Garrett J.<small>Google review</small></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="block">
+  <div class="wrap">
+    <p class="sec-eyebrow">Simple from here</p>
+    <h2 class="sec-title">Three steps, no guesswork</h2>
+    <p class="sec-sub">We keep it human. You'll always know what's happening and what comes next.</p>
+    <div class="steps3">
+      <div class="s3"><div class="n">1</div><h3>Tell us your goal</h3><p>Your answers go straight to Jake so he can tailor your options to your situation and state.</p></div>
+      <div class="s3"><div class="n">2</div><h3>Talk it through</h3><p>Jake reviews your goals and explains your real options in plain English — including programs you may not know about.</p></div>
+      <div class="s3"><div class="n">3</div><h3>Move forward with a plan</h3><p>When you're ready, we guide you through the application and toward closing. All loans are subject to underwriting approval.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="block" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <p class="sec-eyebrow">One team, every loan type</p>
+    <h2 class="sec-title">Loan options under one roof</h2>
+    <p class="sec-sub">First home, dream home, or somewhere in between — we'll match you to the right fit. Availability and terms vary by state and eligibility.</p>
+    <div class="prods">
+      <div class="prod"><h3>Conventional</h3><p>Flexible terms for buyers with steady credit and income.</p></div>
+      <div class="prod"><h3>FHA</h3><p>Lower down payment options, popular with first-time buyers.</p></div>
+      <div class="prod"><h3>VA</h3><p>For eligible veterans, service members, and surviving spouses.</p></div>
+      <div class="prod"><h3>USDA</h3><p>For eligible buyers in qualifying rural and suburban areas.</p></div>
+      <div class="prod"><h3>Jumbo</h3><p>Financing for higher-value homes above conforming limits.</p></div>
+      <div class="prod"><h3>Down Payment Assistance</h3><p>NY programs that can help with upfront costs, if eligible.</p></div>
+      <div class="prod"><h3>Refinance</h3><p>Explore whether a refinance fits your goals down the road.</p></div>
+      <div class="prod"><h3>Reverse / HECM</h3><p>Options for qualifying homeowners 62+.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Team Bloom -->
+<section class="block">
+  <div class="wrap">
+    <div class="why">
+      <div>
+        <h2>Why buyers choose Jake</h2>
+        <p>You get a knowledgeable partner who picks up the phone, explains the details, and keeps your file moving — backed by a full lender with national reach.</p>
+        <p style="margin:0">We compete on reliability, speed, and product range — not gimmicks.</p>
+      </div>
+      <div class="why-stats">
+        <div class="st"><span class="num">26</span><span class="lbl">States licensed</span></div>
+        <div class="st"><span class="num">8</span><span class="lbl">Loan programs</span></div>
+        <div class="st"><span class="num">1:1</span><span class="lbl">Direct access to Jake</span></div>
+        <div class="st"><span class="num">Same-day</span><span class="lbl">Typical follow-up</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <p class="sec-eyebrow">Good questions</p>
+    <h2 class="sec-title">Before you get started</h2>
+    <div class="faq" style="margin-top:34px">
+      <details class="qa"><summary>Will this affect my credit?</summary><p>No. Filling out this short form does not pull your credit. If you decide to move forward later, Jake will explain every step before anything happens.</p></details>
+      <details class="qa"><summary>Do I have to commit to anything?</summary><p>Not at all. This is an inquiry, not an application or a commitment. It simply connects you with Jake, who can answer your questions.</p></details>
+      <details class="qa"><summary>I'm a first-time buyer and feel lost. Is that okay?</summary><p>That's exactly who we love working with. We'll walk you through how much you may be able to put toward a home, which programs fit, and what the path looks like — no jargon.</p></details>
+      <details class="qa"><summary>Which states do you serve?</summary><p>We're currently licensed in 26 states: Alabama, Arkansas, California, Connecticut, Florida, Idaho, Indiana, Iowa, Kentucky, Louisiana, Maryland, Massachusetts, Mississippi, Montana, New Jersey, New Mexico, New York, North Carolina, Ohio, Oklahoma, Pennsylvania, South Carolina, Tennessee, Texas, Washington, and Wyoming. Program availability and terms vary by state and eligibility — Jake will confirm what's available where you're buying.</p></details>
+      <details class="qa"><summary>How soon will someone reach out?</summary><p>Typically the same business day. Jake follows up personally — not an automated call center.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA band -->
+<section class="block">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Ready to see your options?</h2>
+      <p>It takes about a minute, and there's no obligation.</p>
+      <button class="btn btn-primary" onclick="document.getElementById('card').scrollIntoView({behavior:'smooth'});var n=document.getElementById('name');">Start now</button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer + compliance -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <img class="foot-logo" src="/United-Mortgage-Color-Logo-200x200.png" alt="United Mortgage Corp.">
+        <div>United Mortgage Corp. · Headquartered in Melville, NY · Licensed in 26 states</div>
+      </div>
+      <div class="foot-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Licensing</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="compliance">
+      <span class="ehl" style="margin-right:10px"><span class="ehl-mark"></span></span>
+      <span class="block">Jake Rosenbloom, NMLS #1284586 · United Mortgage Corp., NMLS #1330</span><br>
+      Equal Housing Lender · Not a commitment to lend.
+      <br><br>
+      United Mortgage Corp., NMLS #1330, Corporate Office: 401 Broadhollow Road, Suite 150, Melville, NY 11747. United Mortgage Corp. is not affiliated with your current lender nor an agency of the federal government. This is not a government form, a credit decision, or a commitment to lend. All loans are subject to credit approval and underwriting. Rates, terms, and programs are subject to change without notice, may not be available at commitment or closing, and vary by state and borrower eligibility. Submitting this form does not constitute a loan application or an approval. Refinancing an existing loan may increase the total finance charges over the life of the loan. Equal Housing Opportunity. NMLS Consumer Access: www.nmlsconsumeraccess.org.
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/gtag.js" defer></script>
+<script src="scripts/form.js" defer></script>
+</body>
+</html>
