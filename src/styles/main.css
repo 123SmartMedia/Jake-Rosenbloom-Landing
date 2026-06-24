@@ -35,8 +35,8 @@
   .nmls-link{color:#fff;text-decoration:underline;text-underline-offset:2px;transition:.15s}
   .nmls-link:hover{color:#bfe0e6}
   .topbar .ehl{display:inline-flex;align-items:center;gap:7px}
-  .ehl-mark{width:16px;height:16px;border:1.5px solid #cfe0ee;border-radius:2px;display:inline-block;position:relative}
-  .ehl-mark::before{content:"";position:absolute;inset:3px 3px 0 3px;border:1.5px solid #cfe0ee;border-bottom:none;clip-path:polygon(50% 0,100% 55%,0 55%)}
+  .ehl-logo{height:20px;width:auto;display:block;filter:brightness(0) invert(1)}
+  .ehl-logo-footer{height:54px;width:auto;display:block;filter:brightness(0) invert(1);margin-bottom:10px;opacity:.85}
 
   /* ---------- Header ---------- */
   header.site{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
