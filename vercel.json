@@ -1,9 +1,3 @@
 {
-  "outputDirectory": "src",
-  "functions": {
-    "src/api/*.js": {}
-  },
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/src/api/$1" }
-  ]
+  "outputDirectory": "src"
 }
