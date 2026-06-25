@@ -234,8 +234,8 @@ export default function Home() {
               <div>United Mortgage Corp. · Headquartered in Melville, NY · Licensed in 26 states</div>
             </div>
             <div className="foot-links">
-              <a href="/privacy">Privacy Policy</a>
-              <a href="/terms">Terms of Use</a>
+              <a href="https://unitedmortgage.com/wp-content/uploads/2021/02/UNITED-MORTGAGE-CORP.-PRIVACY-NOTICE.pdf" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+              <a href="https://unitedmortgage.com/about-us/policies/" target="_blank" rel="noopener noreferrer">Terms of Use</a>
               <a href="/licensing">Licensing</a>
               <a href="mailto:placeholder@unitedmortgage.com">Contact</a>
             </div>

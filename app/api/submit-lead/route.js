@@ -69,7 +69,8 @@ export async function POST(request) {
   }).catch(() => {});
 
   // Meta CAPI (non-blocking) — hashed user data per Meta requirements
-  if (process.env.META_PIXEL_ID && process.env.META_CAPI_ACCESS_TOKEN) {
+  // META_PIXEL_ID must be all digits (real pixel IDs are numeric); skips when placeholder
+  if (/^\d+$/.test(process.env.META_PIXEL_ID || '') && process.env.META_CAPI_ACCESS_TOKEN) {
     const crypto = await import('node:crypto');
     const hash = (val) => crypto.createHash('sha256').update(val.toLowerCase().trim()).digest('hex');
     sendMetaCAPIEvent({
