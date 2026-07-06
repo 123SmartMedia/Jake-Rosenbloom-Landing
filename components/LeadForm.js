@@ -509,6 +509,7 @@ export default function LeadForm() {
                     id="firstName"
                     name="firstName"
                     autoComplete="given-name"
+                    enterKeyHint="next"
                     placeholder="Jordan"
                     value={data.firstName}
                     onChange={e => setField('firstName', e.target.value)}
@@ -522,6 +523,7 @@ export default function LeadForm() {
                     id="lastName"
                     name="lastName"
                     autoComplete="family-name"
+                    enterKeyHint="next"
                     placeholder="Smith"
                     value={data.lastName}
                     onChange={e => setField('lastName', e.target.value)}
@@ -536,7 +538,7 @@ export default function LeadForm() {
                   id="email"
                   name="email"
                   autoComplete="email"
-                  inputMode="email"
+                  enterKeyHint="next"
                   placeholder="you@email.com"
                   value={data.email}
                   onChange={e => setField('email', e.target.value)}
@@ -550,7 +552,7 @@ export default function LeadForm() {
                   id="phone"
                   name="phone"
                   autoComplete="tel"
-                  inputMode="numeric"
+                  enterKeyHint="done"
                   placeholder="(555) 555-1234"
                   value={data.phone}
                   onChange={e => setField('phone', e.target.value)}
