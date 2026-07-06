@@ -125,6 +125,26 @@ header.site .wrap {
   display: block;
 }
 
+/* YouTube iframe cover — fills the column the same way object-fit:cover would */
+.youtube-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.youtube-bg iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Scale so the 16:9 frame always covers the container, whatever its shape */
+  width: 100vw;
+  height: 56.25vw;   /* 16:9 — tall enough when container is wide */
+  min-height: 100%;
+  min-width: 177.78vh; /* 16:9 inverted — wide enough when container is tall */
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
 .video-overlay {
   position: absolute;
   inset: 0;
