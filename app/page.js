@@ -18,7 +18,10 @@ export default function Home() {
       <div className="trust-split">
 
         {/* Left — background video (hosted on Supabase Storage) */}
-        <VideoBackground src="https://gxvtrznkzkuukyfwedzu.supabase.co/storage/v1/object/public/assets/JakeVideo.mp4" />
+        <VideoBackground
+          src="https://gxvtrznkzkuukyfwedzu.supabase.co/storage/v1/object/public/assets/JakeVideo.mp4"
+          poster="/jake-video-poster.webp"
+        />
 
         {/* Right — form column */}
         <div className="form-col">

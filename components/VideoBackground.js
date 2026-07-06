@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 
-export default function VideoBackground({ src }) {
+export default function VideoBackground({ src, poster }) {
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
 
@@ -21,6 +21,8 @@ export default function VideoBackground({ src }) {
           muted
           loop
           playsInline
+          preload="none"
+          poster={poster}
           className="hero-video"
           aria-label="Jake Rosenbloom introduction video"
         >
