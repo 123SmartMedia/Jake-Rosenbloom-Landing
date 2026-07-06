@@ -42,6 +42,19 @@ const CLOSING_TIMELINE_OPTIONS = [
   { value: 'Just researching',              icon: '💭', label: 'Just researching' },
 ];
 
+// ── All 50 US states + DC ────────────────────────────────────────────────────
+const ALL_STATES = [
+  'Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut',
+  'Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa',
+  'Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan',
+  'Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada',
+  'New Hampshire','New Jersey','New Mexico','New York','North Carolina',
+  'North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island',
+  'South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont',
+  'Virginia','Washington','West Virginia','Wisconsin','Wyoming',
+  'Washington D.C.',
+];
+
 // ── Path B — Refinancing ─────────────────────────────────────────────────────
 const MORTGAGE_BALANCE_OPTIONS = [
   'Under $100k', '$100k – $200k', '$200k – $350k',
@@ -96,7 +109,7 @@ function getPath(goal) {
 
 // Maps each step+path to the data field that must be non-empty to advance
 const STEP_FIELD = {
-  2: { A: 'purchasePriceRange', B: 'propertyZip', C: 'propertyZip', D: 'isHomeowner' },
+  2: { A: 'purchasePriceRange', B: 'propertyState', C: 'propertyState', D: 'isHomeowner' },
   3: { A: 'downPayment',        B: 'mortgageBalance', C: 'homeValue',  D: 'annualIncome' },
   4: { A: 'creditScore',        B: 'currentInterestRate', C: 'mortgageBalance', D: 'creditScore' },
   5: { A: 'closingTimeline',    B: 'refinanceReason', C: 'cashAmount', D: 'biggestConcern' },
@@ -108,7 +121,7 @@ function initData() {
     // Path A
     purchasePriceRange: '', downPayment: '', closingTimeline: '',
     // Path B
-    propertyZip: '', mortgageBalance: '', currentInterestRate: '', refinanceReason: '',
+    propertyState: '', mortgageBalance: '', currentInterestRate: '', refinanceReason: '',
     // Path C
     homeValue: '', cashAmount: '',
     // Path D
@@ -181,12 +194,6 @@ export default function LeadForm() {
 
     const field = STEP_FIELD[step]?.[path];
     if (!field) return true;
-
-    if (field === 'propertyZip') {
-      const valid = /^\d{5}$/.test(data.propertyZip.trim());
-      if (!valid) { markErrors(['propertyZip']); return false; }
-      return true;
-    }
 
     if (!data[field]) { markErrors([field]); return false; }
     return true;
@@ -287,21 +294,20 @@ export default function LeadForm() {
     );
   }
 
-  function ZipField() {
+  function PropertyStateField() {
     return (
-      <div className={`field${errors.propertyZip ? ' invalid' : ''}`}>
-        <label htmlFor="propertyZip">Property zip code</label>
-        <input
-          type="text"
-          id="propertyZip"
-          name="propertyZip"
-          inputMode="numeric"
-          placeholder="e.g. 10001"
-          maxLength={5}
-          value={data.propertyZip}
-          onChange={e => setField('propertyZip', e.target.value.replace(/\D/g, ''))}
-        />
-        <div className="err">Please enter a valid 5-digit zip code.</div>
+      <div className={`field${errors.propertyState ? ' invalid' : ''}`}>
+        <label htmlFor="propertyState">Property state</label>
+        <select
+          id="propertyState"
+          name="propertyState"
+          value={data.propertyState}
+          onChange={e => setField('propertyState', e.target.value)}
+        >
+          <option value="">Select a state…</option>
+          {ALL_STATES.map(s => <option key={s} value={s}>{s}</option>)}
+        </select>
+        <div className="err">Please select a state.</div>
       </div>
     );
   }
@@ -369,7 +375,7 @@ export default function LeadForm() {
             <div className="step active">
               <p className="stepcount">Step 2 of {TOTAL}</p>
               <p className="qtitle">Where is your current property located?</p>
-              <ZipField />
+              <PropertyStateField />
             </div>
           )}
           {step === 3 && path === 'B' && (
@@ -411,7 +417,7 @@ export default function LeadForm() {
             <div className="step active">
               <p className="stepcount">Step 2 of {TOTAL}</p>
               <p className="qtitle">Where is your property located?</p>
-              <ZipField />
+              <PropertyStateField />
             </div>
           )}
           {step === 3 && path === 'C' && (
