@@ -4,6 +4,7 @@ import SiteHeader from '@/components/SiteHeader';
 import LeadForm from '@/components/LeadForm';
 import StickyBar from '@/components/StickyBar';
 import HeadshotAvatar from '@/components/HeadshotAvatar';
+import VideoBackground from '@/components/VideoBackground';
 
 const phone = process.env.NEXT_PUBLIC_JAKE_PHONE || '+10000000000';
 
@@ -17,18 +18,7 @@ export default function Home() {
       <div className="trust-split">
 
         {/* Left — background video (hosted on Supabase Storage) */}
-        <div className="video-col">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            aria-hidden="true"
-          >
-            <source src="https://gxvtrznkzkuukyfwedzu.supabase.co/storage/v1/object/public/assets/JakeVideo.mp4" type="video/mp4" />
-          </video>
-          <div className="video-overlay" aria-hidden="true" />
-        </div>
+        <VideoBackground src="https://gxvtrznkzkuukyfwedzu.supabase.co/storage/v1/object/public/assets/JakeVideo.mp4" />
 
         {/* Right — form column */}
         <div className="form-col">

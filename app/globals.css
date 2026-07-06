@@ -111,46 +111,54 @@ header.site .wrap {
 }
 
 .video-col {
-  position: relative;
-  overflow: hidden;
   background: var(--navy-deep);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.video-col video {
-  position: absolute;
-  inset: 0;
+.video-frame {
+  position: relative;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -12px rgba(0,0,0,0.5);
 }
 
-/* YouTube iframe cover — fills the column the same way object-fit:cover would */
-.youtube-bg {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-.youtube-bg iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* Scale so the 16:9 frame always covers the container, whatever its shape */
-  width: 100vw;
-  height: 56.25vw;   /* 16:9 — tall enough when container is wide */
-  min-height: 100%;
-  min-width: 177.78vh; /* 16:9 inverted — wide enough when container is tall */
-  transform: translate(-50%, -50%);
-  border: none;
+.hero-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(14,42,71,0.48) 0%, rgba(14,42,71,0.22) 100%);
+  background: linear-gradient(160deg, rgba(14,42,71,0.28) 0%, rgba(14,42,71,0.08) 100%);
   pointer-events: none;
 }
+
+.video-mute-btn {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  transition: background 0.15s;
+  z-index: 2;
+}
+.video-mute-btn:hover { background: rgba(255,255,255,0.32); }
 
 .form-col {
   background: var(--paper);
@@ -196,7 +204,7 @@ header.site .wrap {
     min-height: auto;
   }
   .video-col {
-    aspect-ratio: 16 / 9;
+    padding: 12px;
   }
   .form-col {
     padding: 28px 18px;
