@@ -13,60 +13,70 @@ export default function Home() {
       <TopBar />
       <SiteHeader />
 
-      {/* Hero */}
-      <section className="hero">
-        <div className="wrap">
-          <div className="hero-grid">
-            <div>
-              <span className="eyebrow">✦ No obligation · No credit pull</span>
-              <h1>
-                Get a mortgage plan built <em>for your situation</em>
-              </h1>
-              <p className="lede">
-                Jake Rosenbloom is a loan officer at United Mortgage Corp. — licensed in 26 states
-                and focused on first-time buyers who want straight answers.
-              </p>
-              <ul className="ticks">
-                <li><span className="tick">✓</span> No hard credit pull to get started</li>
-                <li><span className="tick">✓</span> Personal follow-up from Jake — not a call center</li>
-                <li><span className="tick">✓</span> Access to conventional, FHA, VA, USDA &amp; more</li>
-              </ul>
-              <div className="trustrow">
-                <div className="item"><span className="num">26</span>states licensed</div>
-                <div className="item"><span className="num">8</span>loan programs</div>
-                <div className="item">
-                  <a
-                    href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/1284586"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: 'inherit', textDecoration: 'none' }}
-                  >
-                    <span className="num">NMLS</span>#1284586
-                  </a>
-                </div>
-              </div>
-            </div>
+      {/* ── Trust Split: video left / form right ── */}
+      <div className="trust-split">
 
-            <div className="order-form">
-              <Suspense>
-                <LeadForm />
-              </Suspense>
+        {/* Left — background video */}
+        <div className="video-col">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/jake-poster.jpg"
+            aria-hidden="true"
+          >
+            {/* TODO: replace src with CDN URL before deploying to production */}
+            <source src="/JakeVideo.mp4" type="video/mp4" />
+          </video>
+          <div className="video-overlay" aria-hidden="true" />
+        </div>
 
-              {/* Loan officer intro card */}
-              <div className="intro">
-                <HeadshotAvatar />
-                <div className="who">
-                  <span className="role">Your loan officer</span>
-                  <strong>Jake Rosenbloom</strong>
-                  <span>&ldquo;Hi! I&apos;ll personally make sure you get clear answers — no pressure, no runaround.&rdquo;</span>
-                </div>
-              </div>
+        {/* Right — form column */}
+        <div className="form-col">
+          <p className="form-col-eyebrow">✦ No obligation · No credit pull</p>
+          <h1 className="form-col-headline">Get Pre-Approved with Jake Rosenbloom</h1>
+          <p className="form-col-lede">
+            Licensed in 26 states · Personal follow-up from Jake · No hard credit pull to get started
+          </p>
+
+          <Suspense>
+            <LeadForm />
+          </Suspense>
+
+          {/* Loan officer intro card */}
+          <div className="intro">
+            <HeadshotAvatar />
+            <div className="who">
+              <span className="role">Your loan officer</span>
+              <strong>Jake Rosenbloom</strong>
+              <span>&ldquo;Hi! I&apos;ll personally make sure you get clear answers — no pressure, no runaround.&rdquo;</span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Sticky sentinel — StickyBar watches this to know when form is off-screen */}
+      {/* Trust strip — key stats below the fold break */}
+      <div className="trust-strip">
+        <div className="wrap">
+          <div className="item"><strong>26</strong> states licensed</div>
+          <div className="item"><strong>8</strong> loan programs</div>
+          <div className="item"><strong>Same-day</strong> follow-up from Jake</div>
+          <div className="item">
+            NMLS{' '}
+            <a
+              href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/1284586"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'var(--teal)', fontWeight: 600 }}
+            >
+              #1284586
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Sticky bar — watches when form scrolls off screen */}
       <Suspense>
         <StickyBar phone={phone} />
       </Suspense>

@@ -103,6 +103,116 @@ header.site .wrap {
 /* ---------- UM logo in header ---------- */
 .um-logo-header { height: 36px; width: auto; display: block; }
 
+/* ---------- Trust Split (video left / form right) ---------- */
+.trust-split {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  min-height: calc(100svh - 97px); /* 97px = topbar ~37px + header ~60px */
+}
+
+.video-col {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-deep);
+}
+
+.video-col video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(14,42,71,0.48) 0%, rgba(14,42,71,0.22) 100%);
+  pointer-events: none;
+}
+
+.form-col {
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 36px;
+  overflow-y: auto;
+}
+
+.form-col-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 12px;
+}
+
+.form-col-headline {
+  font-family: 'Plus Jakarta Sans', 'Inter', Arial, sans-serif;
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 8px;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+
+.form-col-lede {
+  font-size: 14px;
+  color: var(--gray);
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .trust-split {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .video-col {
+    aspect-ratio: 16 / 9;
+  }
+  .form-col {
+    padding: 28px 18px;
+    justify-content: flex-start;
+  }
+  .form-col-headline {
+    font-size: clamp(20px, 5.5vw, 26px);
+  }
+}
+
+/* ---------- Trust strip (below the split) ---------- */
+.trust-strip {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+}
+.trust-strip .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.trust-strip .item {
+  font-size: 13px;
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.trust-strip .item strong {
+  color: var(--navy);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+}
+
 /* ---------- Hero ---------- */
 .hero {
   background:
