@@ -16,17 +16,17 @@ export default function Home() {
       {/* ── Trust Split: video left / form right ── */}
       <div className="trust-split">
 
-        {/* Left — YouTube background video */}
+        {/* Left — background video (hosted on Supabase Storage) */}
         <div className="video-col">
-          <div className="youtube-bg" aria-hidden="true">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/10D4yBGUY34?autoplay=1&mute=1&loop=1&playlist=10D4yBGUY34&rel=0&playsinline=1"
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              title="Jake Rosenbloom — Loan Officer at United Mortgage Corp."
-            />
-          </div>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-hidden="true"
+          >
+            <source src="https://gxvtrznkzkuukyfwedzu.supabase.co/storage/v1/object/public/assets/JakeVideo.mp4" type="video/mp4" />
+          </video>
           <div className="video-overlay" aria-hidden="true" />
         </div>
 
