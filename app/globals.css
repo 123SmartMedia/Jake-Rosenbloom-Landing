@@ -107,15 +107,14 @@ header.site .wrap {
 .trust-split {
   display: grid;
   grid-template-columns: 55fr 45fr;
-  min-height: calc(100svh - 97px); /* 97px = topbar ~37px + header ~60px */
+  align-items: stretch;
 }
 
 .video-col {
   background: var(--navy-deep);
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 24px;
+  display: grid;
+  place-items: center;
 }
 
 .video-frame {
