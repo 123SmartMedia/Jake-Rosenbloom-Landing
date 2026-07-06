@@ -20,7 +20,7 @@ export default function Home() {
         <div className="video-col">
           <div className="youtube-bg" aria-hidden="true">
             <iframe
-              src="https://www.youtube.com/embed/10D4yBGUY34?autoplay=1&mute=1&loop=1&playlist=10D4yBGUY34&controls=0&rel=0&playsinline=1"
+              src="https://www.youtube-nocookie.com/embed/10D4yBGUY34?autoplay=1&mute=1&loop=1&playlist=10D4yBGUY34&rel=0&playsinline=1"
               frameBorder="0"
               allow="autoplay; encrypted-media"
               allowFullScreen
